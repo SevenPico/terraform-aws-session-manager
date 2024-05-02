@@ -1,36 +1,7 @@
-variable "bucket_name" {
-  description = "Name prefix of S3 bucket to store session logs"
-  type        = string
-}
-
-variable "log_archive_days" {
-  description = "Number of days to wait before archiving to Glacier"
-  type        = number
-  default     = 30
-}
-
-variable "log_expire_days" {
-  description = "Number of days to wait before deleting"
-  type        = number
-  default     = 365
-}
-
-variable "access_log_expire_days" {
-  description = "Number of days to wait before deleting access logs"
-  type        = number
-  default     = 30
-}
-
 variable "kms_key_deletion_window" {
   description = "Waiting period for scheduled KMS Key deletion.  Can be 7-30 days."
   type        = number
   default     = 7
-}
-
-variable "kms_key_alias" {
-  description = "Alias prefix of the KMS key.  Must start with alias/ followed by a name"
-  type        = string
-  default     = "alias/ssm-key"
 }
 
 variable "cloudwatch_logs_retention" {
@@ -108,7 +79,7 @@ EOT
 
 variable "create_kms_key" {
   type    = bool
-  default = false
+  default = true
 }
 
 variable "lifecycle_configuration_rules" {
