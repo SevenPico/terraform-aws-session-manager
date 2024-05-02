@@ -65,7 +65,7 @@ module "session_manager_iam_assume_role" {
   source     = "registry.terraform.io/SevenPicoForks/iam-role/aws"
   version    = "2.0.0"
   context    = module.context.self
-  attributes = ["session", "manager", "assume", "role"]
+  attributes = ["assume", "role"]
 
   assume_role_actions      = ["sts:AssumeRole"]
   assume_role_conditions   = []
