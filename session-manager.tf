@@ -1,6 +1,6 @@
 resource "aws_ssm_document" "session_manager_prefs" {
   count           = module.context.enabled ? 1 : 0
-  name            = "SSM-SessionManagerRunShell"
+  name            = "${module.context.id}-SessionManagerRunShell"
   document_type   = "Session"
   document_format = "JSON"
   tags            = module.context.tags
