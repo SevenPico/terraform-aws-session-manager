@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Sns Kms Key
+# Session Manager Kms Key
 #------------------------------------------------------------------------------
 data "aws_iam_policy_document" "session_manager_kms_key_policy_doc" {
   count = module.context.enabled && var.create_kms_key ? 1 : 0

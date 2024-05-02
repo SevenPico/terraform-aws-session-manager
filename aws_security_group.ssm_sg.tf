@@ -1,4 +1,3 @@
-
 # Create VPC Endpoints For Session Manager
 resource "aws_security_group" "ssm_sg" {
   count       = var.vpc_endpoints_enabled ? 1 : 0
