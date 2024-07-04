@@ -96,7 +96,7 @@ module "s3_session_manager_log_storage" {
   ]
   block_public_acls             = true
   block_public_policy           = true
-  bucket_key_enabled            = false
+  bucket_key_enabled            = true
   bucket_name                   = null
   cors_rule_inputs              = null
   grants                        = []

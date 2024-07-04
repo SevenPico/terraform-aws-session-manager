@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "session_manager_kms_key_policy_doc" {
     resources = ["*"]
     condition {
       test     = "ArnEquals"
-      values   = ["${local.arn_prefix}:logs:${local.region}:${local.account_id}:/aws/ssm/${module.context.id}"]
+      values   = ["${local.arn_prefix}:logs:${local.region}:${local.account_id}:*"]
       variable = "kms:EncryptionContext:aws:logs:arn"
     }
   }
